@@ -1,0 +1,111 @@
+/* Les Gambettes Universitaire – direction artistique inspirée de l’UTMB :
+   fond sombre, titres condensés en capitales italiques, grandes photos plein écran, accent « volt ». */
+:root{
+  --noir:#070B14; --nuit:#0E1526; --carte:#141C30; --trait:rgba(255,255,255,.14);
+  --texte:#E9EDF5; --gris:#A3AEC4; --volt:#C8F135; --blanc:#FFFFFF;
+  --titre:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --corps:"Barlow","Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--corps);font-size:1.0625rem;line-height:1.65;color:var(--texte);background:var(--noir)}
+a{color:var(--volt)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--volt);outline-offset:3px}
+
+/* Navigation */
+.nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;padding:0 1.5rem;
+  background:rgba(7,11,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
+.marque{font-family:var(--titre);font-weight:800;font-style:italic;text-transform:uppercase;font-size:1.35rem;line-height:1;
+  color:var(--blanc);text-decoration:none;padding:.85rem 0}
+.marque span{display:block;margin-top:.2rem;font-style:normal;font-weight:700;font-size:.7rem;letter-spacing:.25em;color:var(--volt)}
+.nav ul{list-style:none;display:flex;margin-left:auto;overflow-x:auto}
+.nav li a{display:block;padding:1.25rem .9rem;color:var(--blanc);text-decoration:none;text-transform:uppercase;
+  font-size:.8rem;font-weight:600;letter-spacing:.12em;white-space:nowrap;border-bottom:3px solid transparent}
+.nav li a:hover{color:var(--volt)}
+.nav li a[aria-current="page"]{border-bottom-color:var(--volt)}
+
+/* En-tête plein écran avec photo */
+.hero{position:relative;display:flex;align-items:flex-end;min-height:30rem;padding:5rem 1.5rem 3rem;color:var(--blanc);
+  background:var(--nuit) center/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(7,11,20,.97) 4%,rgba(7,11,20,.6) 50%,rgba(7,11,20,.3))}
+.hero--index{background-image:url(images/coureurs-photo.jpg)}
+.hero--evenement{background-image:url(images/coureurs-vue-dessus.jpg);background-position:center 55%}
+.hero--programme{background-image:url(images/arrivee-photo.jpg);background-position:center 35%}
+.hero--infos{background-image:url(images/piste-athletisme.jpg)}
+.hero--inscriptions{background-image:url(images/coureurs-ville.jpg);background-position:center 62%}
+.hero-inner{position:relative;width:100%;max-width:72rem;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.hero h1{font-family:var(--titre);font-weight:800;font-style:italic;text-transform:uppercase;
+  font-size:clamp(2.8rem,8vw,6rem);line-height:.92;max-width:14ch}
+.hero p{margin-top:1rem;max-width:36rem;font-size:1.2rem;color:#DDE3EE}
+.hero .bouton{margin-top:1.25rem}
+.dossard{text-align:right}
+.dossard small{display:block;font-size:.8rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--volt)}
+.dossard strong{display:block;font-family:var(--titre);font-style:italic;font-weight:800;font-size:clamp(4.5rem,12vw,8rem);line-height:.9;
+  color:transparent;-webkit-text-stroke:2px var(--blanc)}
+.credit{position:absolute;right:1rem;bottom:.6rem;margin:0!important;font-size:.72rem!important;color:var(--gris)!important;z-index:1}
+
+/* Contenu */
+main{max-width:72rem;margin:0 auto;padding:3.5rem 1.5rem 5rem}
+section{margin-bottom:3.5rem}
+h2{font-family:var(--titre);font-weight:800;font-style:italic;text-transform:uppercase;font-size:clamp(1.9rem,4vw,2.7rem);line-height:1;margin-bottom:1.25rem;color:var(--blanc)}
+h2::before{content:"";display:block;width:3rem;height:.3rem;margin-bottom:.8rem;background:var(--volt)}
+h3{font-family:var(--titre);font-weight:700;text-transform:uppercase;letter-spacing:.03em;font-size:1.35rem;line-height:1.15;margin-bottom:.35rem;color:var(--blanc)}
+p{max-width:46rem;margin-bottom:1rem}
+p strong{color:var(--blanc)}
+.grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.25rem}
+.bloc{background:var(--carte);border:1px solid var(--trait);border-top:3px solid var(--volt);padding:1.4rem}
+.bloc p{margin:0;color:var(--gris)}
+.chiffres{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1rem}
+.chiffre{background:var(--carte);border:1px solid var(--trait);border-left:3px solid var(--volt);padding:1.1rem 1.25rem}
+.chiffre strong{display:block;font-family:var(--titre);font-style:italic;font-weight:800;font-size:2.3rem;line-height:1.05;color:var(--blanc)}
+.chiffre span{display:block;margin-top:.3rem;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gris)}
+ul.liste{list-style:none;max-width:46rem;margin:0 0 1rem}
+ul.liste li{position:relative;padding:.2rem 0 .2rem 1.6rem;margin-bottom:.35rem}
+ul.liste li::before{content:"";position:absolute;left:0;top:.8rem;width:.6rem;height:.6rem;background:var(--volt)}
+.don{font-size:1.25em;color:var(--volt)}
+
+/* Programme : frise chronologique */
+.deroule{list-style:none;border-left:3px solid var(--trait);margin-left:.5rem}
+.deroule li{position:relative;padding:0 0 2rem 1.9rem}
+.deroule li::before{content:"";position:absolute;left:-.8rem;top:.5rem;width:1.2rem;height:1.2rem;background:var(--volt);border:3px solid var(--noir)}
+.deroule time{font-family:var(--titre);font-style:italic;font-weight:800;font-size:1.9rem;line-height:1.1;color:var(--volt)}
+.deroule p{margin:0;color:var(--gris)}
+.deroule .figure{margin:1rem 0 0}
+
+/* Images */
+.figure{margin:0 0 2rem;max-width:44rem}
+.figure img{display:block;width:100%;height:auto;border:1px solid var(--trait)}
+.figure figcaption{margin-top:.4rem;font-size:.85rem;color:var(--gris)}
+.figure--medaille img{aspect-ratio:3/2;object-fit:cover;object-position:50% 45%}
+
+/* Boutons */
+.bouton{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 1.8rem;border:0;border-radius:2px;cursor:pointer;
+  font:inherit;font-weight:700;font-size:.95rem;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;
+  background:var(--volt);color:var(--noir)}
+.bouton::after{content:"→";font-size:1.1em}
+.bouton:hover{background:var(--blanc);color:var(--noir)}
+.bouton--sec{background:transparent;color:var(--blanc);box-shadow:inset 0 0 0 2px var(--blanc)}
+.bouton--sec:hover{background:var(--blanc);color:var(--noir)}
+.boutons{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* Formulaire */
+.formulaire{max-width:36rem;padding:1.75rem;background:var(--carte);border:1px solid var(--trait);border-top:3px solid var(--volt)}
+.formulaire .champ{margin-bottom:1.1rem}
+.formulaire label,.formulaire legend{display:block;margin-bottom:.3rem;font-weight:600;color:var(--blanc)}
+.formulaire input[type=text],.formulaire input[type=email],.formulaire input[type=date],.formulaire input[type=tel],.formulaire select{
+  width:100%;padding:.7rem .8rem;font:inherit;color:var(--blanc);background:var(--noir);border:2px solid #2A3550;border-radius:2px}
+.formulaire input:focus,.formulaire select:focus{border-color:var(--volt)}
+.formulaire fieldset{border:0;margin-bottom:1.1rem}
+.formulaire .choix label{display:flex;gap:.6rem;align-items:center;margin-bottom:.4rem;font-weight:400;color:var(--texte)}
+.formulaire input[type=radio],.formulaire input[type=checkbox]{accent-color:var(--volt);width:1.1rem;height:1.1rem}
+
+footer{padding:2rem 1.5rem;text-align:center;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gris);background:#000;border-top:1px solid var(--trait)}
+
+@media (max-width:40rem){
+  .nav{gap:0}.nav ul{margin-left:0;width:100%}
+  .hero{min-height:26rem;padding:4rem 1.25rem 2.5rem}
+  .dossard{text-align:left}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

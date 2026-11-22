@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inscriptions – Les Gambettes Universitaire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:ital,wght@0,700;0,800;1,800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="nav" aria-label="Navigation principale"><a class="marque" href="index.html">Les Gambettes<span>Universitaire</span></a><ul>
+<li><a href="index.html">Présentation</a></li>
+<li><a href="evenement.html">L’événement</a></li>
+<li><a href="programme.html">Programme</a></li>
+<li><a href="infos.html">Infos pratiques</a></li>
+<li><a href="inscriptions.html" aria-current="page">Inscriptions</a></li>
+</ul></nav>
+<header class="hero hero--inscriptions"><div class="hero-inner">
+  <div>
+    <h1>Inscriptions</h1>
+    <p>Réservez votre place sur la ligne de départ.</p>
+  </div>
+  <div class="dossard" aria-hidden="true"><small>Prêt ?</small><strong>GO</strong></div>
+</div>
+  <p class="credit">Photo : Jerry Wei, via Unsplash</p>
+</header>
+<main>
+  <section>
+    <h2>Formulaire d’inscription</h2>
+    <p>Remplissez le formulaire ci-dessous. Les champs marqués d’une étoile (*) sont obligatoires.</p>
+    <form class="formulaire" action="#" method="post">
+      <div class="champ"><label for="nom">Nom *</label><input type="text" id="nom" name="nom" required autocomplete="family-name"></div>
+      <div class="champ"><label for="prenom">Prénom *</label><input type="text" id="prenom" name="prenom" required autocomplete="given-name"></div>
+      <div class="champ"><label for="naissance">Date de naissance *</label><input type="date" id="naissance" name="naissance" required></div>
+      <div class="champ"><label for="email">Adresse e-mail *</label><input type="email" id="email" name="email" required autocomplete="email"></div>
+      <div class="champ"><label for="tel">Téléphone</label><input type="tel" id="tel" name="tel" autocomplete="tel"></div>
+      <fieldset class="choix">
+        <legend>Parcours *</legend>
+        <label><input type="radio" name="parcours" value="10km" required> 10&nbsp;km – 9&nbsp;€</label>
+        <label><input type="radio" name="parcours" value="5km"> 5&nbsp;km découverte – 5&nbsp;€</label>
+      </fieldset>
+      <div class="champ">
+        <label for="taille">Taille du t-shirt</label>
+        <select id="taille" name="taille">
+          <option value="">Choisir…</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+        </select>
+      </div>
+      <div class="choix champ">
+        <label><input type="checkbox" name="certificat" required> Je dispose d’un certificat médical ou d’une licence en cours de validité *</label>
+        <label><input type="checkbox" name="reglement" required> J’accepte le règlement de la course *</label>
+      </div>
+      <button class="bouton" type="submit">Valider mon inscription</button>
+    </form>
+  </section>
+</main>
+<footer>© 2026 – Nathan Huguenin – M2 STAPS MELS – Université Paris Nanterre</footer>
+</body>
+</html>
